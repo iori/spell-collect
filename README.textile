@@ -1,4 +1,4 @@
-h1. Spell-Collect -スペル修正プログラム-
+h1. Spell-Collect - スペル修正プログラム
 
 h2. 日本語対応
 
