@@ -20,7 +20,7 @@ PeterNorvigのスペル修正プログラムを元に、日本語対応版の開
 
 h2. Requirements:
 
-"Python2.7:":http://www.python.jp/Zope/download/pythoncore
+"Python2.7":http://www.python.jp/Zope/download/pythoncore
 "MeCab, MeCab IPA辞書":http://mecab.sourceforge.net/#download
 "mecab-python":http://sourceforge.net/projects/mecab/files/mecab-python/
 
