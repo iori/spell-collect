@@ -1,5 +1,5 @@
 # coding=utf-8
-import re, collections, MeCab
+import re, collections
 
 # text.lower() 大文字を小文字に. 
 # re.findall() 正規表現にHITした文字列を全てリストにする.
