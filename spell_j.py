@@ -21,7 +21,7 @@ def debug_print(j_list): # 日本語を含むリストを文字化けせずに�
     print "\n".join("%s: %s" % i for i in j_list.items())
 
 NWORDS = train(words(file('big_j.txt').read())) # 単語と出現数
-debug_print(NWORDS)
+#debug_print(NWORDS)
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
