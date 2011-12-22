@@ -2,10 +2,10 @@ h1. Spell-Collect スペル修正プログラム
 
 現在開発中です。spell_j.pyは正常動作していません。
 
-spell.py:
+original/spell.py:
 PeterNorvigの書いたスペル修正プログラムに、勉強の為にコメントを書いたもの。オリジナル。
 
-big.txt:
+original/big.txt:
 PeterNorvigがスペル修正プログラムのP(c)の部分。100万語からなる大きなテキストファイル。
 
 spell_j.py:
