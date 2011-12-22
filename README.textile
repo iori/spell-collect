@@ -1,5 +1,28 @@
-h1. Spell-Collect - スペル修正プログラム
+h1. Spell-Collect スペル修正プログラム
 
-h2. 日本語対応
+h2. Purpose(目的):
 
-このプロジェクトはPeterNorvigのスペル修正プログラムの日本語対応を目標としています。
+PeterNorvigのスペル修正プログラムを元に、日本語対応版の開発をします。
+
+h2. Requirements:
+
+  Python2.7
+  http://www.python.jp/Zope/download/pythoncore
+
+  MeCab, MeCab IPA辞書
+  http://mecab.sourceforge.net/#download
+
+  mecab-python
+  http://sourceforge.net/projects/mecab/files/mecab-python/
+
+h2. How to Use(使い方):
+
+h2. Idea Behind This(考え方):
+
+h2. References:
+
+  スペル修正プログラムはどう書くか
+  http://www.aoky.net/articles/peter_norvig/spell-correct.htm
+
+  スペルミス修正プログラムを作ろう
+  http://www.slideshare.net/naoya1977/spell-correction
