@@ -1,20 +1,27 @@
-# coding=utf-8
-import re, collections, MeCab
+# coding=utf8
+import MeCab, collections, pprint
 
-# text.lower() 大文字を小文字に. 
-# re.findall() 正規表現にHITした文字列を全てリストにする.
-# この場合は文章の英単語を抜き出している
-def words(text): return re.findall('[a-z]+', text.lower()) 
+def words(text):
+    mecab = MeCab.Tagger("mecabrc")
+    node = mecab.parseToNode(text)
+    words = []
+    while node:
+        if (node.posid >= 36) and (node.posid <= 67): # 名詞のみ
+            words.append(node.surface.lower())
+        node = node.next
+    return words
 
-# 確率モデルのトレーニング。
-# それぞれの語が何回現れるか数える
 def train(features):
     model = collections.defaultdict(lambda: 1) # スムージング.未知の語を1とする
     for f in features:
         model[f] += 1 # count
     return model
 
-NWORDS = train(words(file('big.txt').read())) # 単語と出現数
+def debug_print(j_list): # 日本語を含むリストを文字化けせずに表示させる
+    print "\n".join("%s: %s" % i for i in j_list.items())
+
+NWORDS = train(words(file('big_j.txt').read())) # 単語と出現数
+debug_print(NWORDS)
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
