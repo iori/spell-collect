@@ -32,3 +32,4 @@ h2. References:
 
 "スペル修正プログラムはどう書くか":http://www.aoky.net/articles/peter_norvig/spell-correct.htm
 "スペルミス修正プログラムを作ろう":http://www.slideshare.net/naoya1977/spell-correction
+"MeCab品詞ID一覧":http://mecab.sourceforge.net/posid.html
