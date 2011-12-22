@@ -4,9 +4,11 @@ import MeCab, collections, pprint
 def words(text):
     mecab = MeCab.Tagger("mecabrc")
     node = mecab.parseToNode(text)
+    noun_id_start = 36
+    noun_id_end = 67
     words = []
     while node:
-        if (node.posid >= 36) and (node.posid <= 67): # 名詞のみ
+        if (node.posid >= noun_id_start) and (node.posid <= noun_id_end): # 名詞のみ抽出
             words.append(node.surface.lower())
         node = node.next
     return words
@@ -14,7 +16,7 @@ def words(text):
 def train(features):
     model = collections.defaultdict(lambda: 1) # スムージング.未知の語を1とする
     for f in features:
-        model[f] += 1 # count
+        model[f] += 1 # トレーニング
     return model
 
 def debug_print(j_list): # 日本語を含むリストを文字化けせずに表示させる
@@ -26,6 +28,7 @@ NWORDS = train(words(file('big_j.txt').read())) # 単語と出現数
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 # 与えられた語 w に対して可能な修正語 c を列挙する
+# この方法はアルファベットにしか対応できないので、Nグラムインデックスを使用する様に修正する
 def edits1(word):
     n = len(word)
     return set([word[0:i]+word[i+1:] for i in range(n)] +                  # deletion      削除:文字を取り除く
